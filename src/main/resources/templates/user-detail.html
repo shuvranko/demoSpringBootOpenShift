@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Demo Spring-Boot Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+
+<body>
+    <div class="container my-5">
+        <h3> User Details</h3>
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-10">
+                   <form action="#" th:action="@{/user}" th:object="${user}" method="get">
+                        <div class="row">
+                         
+                         <div class="form-group col-md-8">
+                                <label for="name" class="col-form-label">Id</label> 
+                                <input type="text" readonly="readonly" th:field="*{pid}" class="form-control"  id="pid" />
+                            </div>
+                         <div class="form-group col-md-8">
+                                <label for="name" class="col-form-label">Full Name</label> 
+                                <input type="text" readonly="readonly" th:field="*{fullName}" class="form-control"  id="fullName" />
+                            </div> 
+                            <div class="form-group col-md-8">
+                                <label for="name" class="col-form-label">Country</label> 
+                                <input type="text" readonly="readonly" th:field="*{country}" class="form-control"  id="country" />
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="name" class="col-form-label">Born</label> 
+                                <input type="text" readonly="readonly" th:field="*{born}" class="form-control"  id="born" />
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="name" class="col-form-label">Profile</label>
+                                <textarea name="name" readonly="readonly" th:text="${user.profile}" class="form-control"  id="profile"></textarea>
+                            </div>                                                       
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
